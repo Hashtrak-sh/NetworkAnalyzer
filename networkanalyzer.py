@@ -14,7 +14,7 @@ black_listed_ip=['217.168.1.2','192.37.115.0','212.242.33.35','147.137.21.94']
 
 # This dictionary is used for keeping the record of authorized users.
 
-auth_users={"root":"root","soumil":"soumil"}
+auth_users={"root":"root","Hash":"Hash"}
 
 
 """
@@ -23,7 +23,7 @@ This function is used for generating information from the IP addresses. It uses 
 """
 def geoip_city(string):
 	if string in black_listed_ip:	
-		path='/home/soumil/build/geoip/GeoLiteCity.dat'
+		path='/home/hash/build/geoip/GeoLiteCity.dat'
 		gic=pygeoip.GeoIP(path)
 		#print gic
 		try:	
@@ -56,7 +56,7 @@ and longitudes fro plotting placemarks on google maps (my maps). This function i
 def kml_geoip_city(string):
 	if string in black_listed_ip:
 	
-		path='/home/soumil/build/geoip/GeoLiteCity.dat'
+		path='/home/hash/build/geoip/GeoLiteCity.dat'
 		gic=pygeoip.GeoIP(path)
 
 		try:	
@@ -81,7 +81,7 @@ and longitudes fro plotting placemarks on google maps (my maps). This function i
 
 def kml_dest_geoip_city(string):
 	if string in black_listed_ip:
-		path='/home/soumil/build/geoip/GeoLiteCity.dat'
+		path='/home/hash/build/geoip/GeoLiteCity.dat'
 		gic=pygeoip.GeoIP(path)
 
 		try:	
@@ -207,7 +207,7 @@ if len(sys.argv)<2:
 	print "\n -------------------- Please enter the required arguments------------------------- "
 	print "\n Correct syntax is : <FileName>.py username password cli/kml\n"
 	print "\ncli- stands for Command Line Output"
-	print "\nkml- stands fro a KML output which is required for visualization using a Google Map"
+	print "\nkml- stands for a KML output which is required for visualization using a Google Map"
 
 else:
 
@@ -233,7 +233,7 @@ else:
 					try:
 	
 						if str(sys.argv[3])=="cli":
-							f=open('/home/soumil/Downloads/fuzz-2006-06-26-2594.pcap')
+							f=open('/home/hash/Downloads/fuzz-2006-06-26-2594.pcap')
 							pcap=dpkt.pcap.Reader(f)
 							printpcap(pcap)
 							f.close()
@@ -251,7 +251,7 @@ else:
 						      <color>ff0000cc</color>
 						    </LabelStyle>
 						  </Style>\n"""	
-							f=open('/home/soumil/Downloads/fuzz-2006-06-26-2594.pcap')
+							f=open('/home/hash/Downloads/fuzz-2006-06-26-2594.pcap')
 							pcap=dpkt.pcap.Reader(f)
 							view_google(pcap)
 							f.close()
